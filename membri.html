@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membrii - CAR Regionala Căi Ferate Brașov</title>
+  <meta name="description" content="Acces membri CAR Regionala CFR Brașov - Login și înregistrare în platforma Uncar Online">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Salt la conținut</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <i class="fas fa-train"></i>
+        </div>
+        <span class="logo-text">CAR Regionala Bv</span>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Acasă</a></li>
+          <li><a href="despre.html" class="nav-link">Despre</a></li>
+          <li><a href="membri.html" class="nav-link active">Membri</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Meniu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="members-hero">
+    <h1>Zona Membri</h1>
+    <p>Accesează platforma Uncar Online pentru a gestiona contul tău CAR</p>
+  </section>
+
+  <main id="main-content">
+    <!-- Auth Cards -->
+    <div class="auth-cards">
+      <div class="auth-card">
+        <div class="auth-icon">
+          <i class="fas fa-sign-in-alt"></i>
+        </div>
+        <h2>Ești deja membru?</h2>
+        <p>Accesează platforma Uncar Online pentru a-ți gestiona contul, a solicita împrumuturi și a verifica situația financiară.</p>
+        <a href="https://uncaronline.ro/login" class="btn-primary" target="_blank" rel="noopener">
+          <i class="fas fa-user-circle"></i> Conectează-te
+        </a>
+      </div>
+      
+      <div class="auth-card">
+        <div class="auth-icon">
+          <i class="fas fa-user-plus"></i>
+        </div>
+        <h2>Vrei să devii membru?</h2>
+        <p>Înregistrează-te acum și beneficiază de toate avantajele oferite de C.A.R. Regionala Căi Ferate Brașov.</p>
+        <a href="https://uncaronline.ro/register/sunteti-membru/BV063" class="btn-secondary" target="_blank" rel="noopener">
+          <i class="fas fa-user-plus"></i> Înregistrare
+        </a>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="container">
+      <section class="features-section">
+        <h2 class="section-title">Ce poți face în platforma Uncar Online</h2>
+        <p class="section-subtitle">Gestionarea contului tău CAR nu a fost niciodată mai simplă</p>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Vizualizează soldul și istoricul</h3>
+            <p>Accesează oricând situația contului tău, istoricul tranzacțiilor și detaliile împrumuturilor active.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Solicită împrumuturi online</h3>
+            <p>Depune cereri de împrumut direct din platformă, fără să mai fie nevoie să vii la sediu.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Urmărește rambursările</h3>
+            <p>Vezi graficul ratele lunare, sumele de plată și data scadenței pentru fiecare împrumut.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Primești notificări</h3>
+            <p>Fii la curent cu statusul cererilor, aprobările și reamintirile de plată prin notificări.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CAR Regionala CFR Brașov</h4>
+        <p>Str. Toamnei nr. 16, bl. 2D, sc. D, ap. 2<br>Brașov, 500223</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>
+          <i class="fas fa-phone"></i> <a href="tel:0726243266">0726 243 266</a><br>
+          <i class="fas fa-envelope"></i> <a href="mailto:info@car-cfr.ro">info@car-cfr.ro</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Linkuri Utile</h4>
+        <p>
+          <a href="https://uncaronline.ro/login" target="_blank">Uncar Online</a><br>
+          <a href="https://www.uncar.ro" target="_blank">UNCAR Național</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 C.A.R. Regionala Căi Ferate Brașov. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
