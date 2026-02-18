@@ -3,10 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicii | CAR Regionala Căi Ferate Brașov</title>
+  <title>Servicii | CAR Regională Căi Ferate Brașov</title>
   <meta name="description" content="Servicii financiare CAR CFR Brașov - economii, împrumuturi, asistență medicală">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .services-hero {
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, #6B1832 50%, var(--primary-burgundy-dark) 100%);
+      padding: 6rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/></svg>');
+      background-size: 80px 80px;
+      animation: float 20s linear infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-80px); }
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .service-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8f4f0 100%);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 40px rgba(139, 30, 63, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--primary-burgundy));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(139, 30, 63, 0.15);
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-burgundy-light) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(139, 30, 63, 0.3);
+    }
+    
+    .service-icon i {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+    
+    .service-card h3 {
+      color: var(--primary-burgundy);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .service-features {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .service-features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-medium);
+    }
+    
+    .service-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+    
+    .calculator-section {
+      background: linear-gradient(135deg, #f8f4f0 0%, #fff 100%);
+      padding: 4rem 0;
+      position: relative;
+    }
+    
+    .calculator-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(139, 30, 63, 0.1);
+    }
+    
+    .calculator-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .calculator-header i {
+      font-size: 3rem;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+    
+    .input-group {
+      margin-bottom: 1.8rem;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--primary-burgundy);
+      font-weight: 600;
+    }
+    
+    .input-group input[type="number"] {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid #e8e0d8;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+    }
+    
+    .duration-options {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    
+    .duration-btn {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #e8e0d8;
+      background: white;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .duration-btn:hover, .duration-btn.active {
+      background: var(--primary-burgundy);
+      color: white;
+      border-color: var(--primary-burgundy);
+    }
+    
+    .calc-btn {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a02f 100%);
+      color: var(--primary-burgundy-dark);
+      border: none;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+    
+    .calc-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    .result-box {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-burgundy-light) 100%);
+      border-radius: 20px;
+      color: white;
+      display: none;
+    }
+    
+    .result-box.show {
+      display: block;
+      animation: slideUp 0.5s ease;
+    }
+    
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .result-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin: 0.5rem 0;
+    }
+    
+    .result-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .result-item {
+      text-align: center;
+    }
+    
+    .result-item small {
+      opacity: 0.8;
+    }
+    
+    .result-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Salt la conținut</a>
@@ -31,91 +279,126 @@
   </header>
 
   <main id="main-content">
-    <section class="page-hero">
-      <div class="page-hero-content">
-        <h1 class="page-hero-title">Serviciile Noastre</h1>
-        <p class="page-hero-subtitle">Soluții financiare complete pentru membrii noștri</p>
+    <section class="services-hero">
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-content" style="text-align: center;">
+          <span class="hero-badge">Soluții Complete</span>
+          <h1 class="hero-title">Serviciile Noastre</h1>
+          <p class="hero-subtitle">Soluții financiare adaptate nevoilor membrilor CFR</p>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="services-detailed">
+        <div class="services-grid">
           
-          <div class="service-block">
-            <div class="service-icon-large"><i class="fas fa-piggy-bank"></i></div>
-            <div class="service-content">
-              <h2>Economii și Depozite</h2>
-              <p>Capitalizează-ți economiile cu dobânzi atractive. Oferim diverse tipuri de depozite adaptate nevoilor tale:</p>
-              <ul>
-                <li>Depozite la termen cu dobândă fixă</li>
-                <li>Conturi de economii cu lichiditate ridicată</li>
-                <li>Posibilitatea constituirii de depozite recurente</li>
-              </ul>
-            </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-piggy-bank"></i></div>
+            <h3>Economii și Depozite</h3>
+            <p>Fructifică-ți economiile cu dobânzi atractive și siguranță maximă.</p>
+            <ul class="service-features">
+              <li>Depozite la termen cu dobândă fixă</li>
+              <li>Conturi de economii cu lichiditate ridicată</li>
+              <li>Dobândă atractivă până la 5% anual</li>
+              <li>Fără comisioane de administrare</li>
+            </ul>
           </div>
 
-          <div class="service-block">
-            <div class="service-icon-large"><i class="fas fa-hand-holding-usd"></i></div>
-            <div class="service-content">
-              <h2>Împrumuturi de Nevoi Personale</h2>
-              <p>Accesează fonduri rapid și ușor pentru diverse necesități:</p>
-              <ul>
-                <li>Avansuri în contul salariului</li>
-                <li>Împrumuturi pentru achiziții personale</li>
-                <li>Credit pentru studii și formare profesională</li>
-                <li>Împrumuturi pentru evenimente speciale (nunți, botezuri)</li>
-              </ul>
-            </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <h3>Împrumuturi de Nevoi Personale</h3>
+            <p>Accesează fonduri rapid pentru diverse necesități personale.</p>
+            <ul class="service-features">
+              <li>Avansuri în contul salariului</li>
+              <li>Împrumuturi pentru achiziții personale</li>
+              <li>Dobândă preferențială 7% anual</li>
+              <li>Aprobare rapidă în 24-48 ore</li>
+            </ul>
           </div>
 
-          <div class="service-block">
-            <div class="service-icon-large"><i class="fas fa-home"></i></div>
-            <div class="service-content">
-              <h2>Credit Imobiliar</h2>
-              <p>Realizează-ți visul de a avea o locuință proprie:</p>
-              <ul>
-                <li>Credit pentru achiziția unei locuințe</li>
-                <li>Credit pentru construcție sau renovare</li>
-                <li>Termeni flexibili de rambursare</li>
-                <li>Dobânzi competitive</li>
-              </ul>
-            </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-home"></i></div>
+            <h3>Credit Imobiliar</h3>
+            <p>Realizează-ți visul de a avea o locuință proprie.</p>
+            <ul class="service-features">
+              <li>Credit pentru achiziția locuinței</li>
+              <li>Finanțare pentru construcție/renovare</li>
+              <li>Termeni flexibili până la 30 ani</li>
+              <li>Avans minim 15%</li>
+            </ul>
           </div>
 
-          <div class="service-block">
-            <div class="service-icon-large"><i class="fas fa-heartbeat"></i></div>
-            <div class="service-content">
-              <h2>Asistență Medicală</h2>
-              <p>Sănătatea ta și a familiei este prioritatea noastră:</p>
-              <ul>
-                <li>Sprijin financiar pentru intervenții chirurgicale</li>
-                <li>Reimbursare cheltuieli medicale</li>
-                <li>Asistență pentru tratamente speciale</li>
-                <li>Sprijin în caz de spitalizare</li>
-              </ul>
-            </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3>Asistență Medicală</h3>
+            <p>Sănătatea ta și a familiei este prioritatea noastră.</p>
+            <ul class="service-features">
+              <li>Sprijin pentru intervenții chirurgicale</li>
+              <li>Reimbursare cheltuieli medicale</li>
+              <li>Asistență pentru tratamente speciale</li>
+              <li>Covered familie extinsă</li>
+            </ul>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="calculator-section">
       <div class="container">
-        <h2 class="section-title">Calculator de Împrumut</h2>
-        <div class="calculator">
-          <div class="calc-inputs">
-            <label>Suma dorită (lei):
-              <input type="number" id="loanAmount" placeholder="10000" min="1000" step="100">
-            </label>
-            <label>Durata (luni):
-              <input type="number" id="loanMonths" placeholder="12" min="3" max="60">
-            </label>
-            <button onclick="calculateLoan()" class="btn-calc">Calculează</button>
+        <div class="calculator-container">
+          <div class="calculator-header">
+            <i class="fas fa-calculator"></i>
+            <h2>Calculator de Împrumut</h2>
+            <p>Estimează rata lunară cu dobândă de 7% anual</p>
           </div>
-          <div class="calc-result" id="calcResult">
-            <p>Completați câmpurile pentru a vedea estimarea.</p>
+          
+          <div class="input-group">
+            <label>Suma dorită (lei)</label>
+            <input type="number" id="loanAmount" placeholder="ex: 10000" min="1000" step="500">
+          </div>
+          
+          <div class="input-group">
+            <label>Durata împrumutului</label>
+            <div class="duration-options">
+              <button type="button" class="duration-btn" data-months="6">6 luni</button>
+              <button type="button" class="duration-btn" data-months="12">12 luni</button>
+              <button type="button" class="duration-btn active" data-months="24">24 luni</button>
+              <button type="button" class="duration-btn" data-months="36">36 luni</button>
+            </div>
+          </div>
+          
+          <button class="calc-btn" onclick="calculateLoan()">
+            <i class="fas fa-calculator"></i> Calculează
+          </button>
+          
+          <div class="result-box" id="resultBox">
+            <div style="text-align: center; margin-bottom: 1rem;">
+              <small>Rata lunară estimată</small>
+              <div class="result-amount" id="monthlyRate">0 lei</div>
+            </div>
+            <div class="result-details">
+              <div class="result-item">
+                <small>Suma împrumutată</small>
+                <strong id="totalAmount">0 lei</strong>
+              </div>
+              <div class="result-item">
+                <small>Dobândă totală</small>
+                <strong id="totalInterest">0 lei</strong>
+              </div>
+              <div class="result-item">
+                <small>Total de plată</small>
+                <strong id="totalPayment">0 lei</strong>
+              </div>
+              <div class="result-item">
+                <small>Dobândă anuală</small>
+                <strong>7%</strong>
+              </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
+              <i class="fas fa-info-circle"></i> Calcul estimativ. Contactează-ne pentru oferta exactă.
+            </p>
           </div>
         </div>
       </div>
@@ -131,35 +414,43 @@
         <p><i class="fas fa-phone"></i> 0726 243 266</p>
         <p><i class="fas fa-envelope"></i> info@car-cfr.ro</p>
       </div>
-      <div class="footer-section">
-        <h4>Linkuri Rapide</h4>
-        <p><a href="https://uncaronline.ro/login">Acces Platformă</a></p>
-        <p><a href="https://www.uncar.ro">UNCAR Național</a></p>
-      </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 CAR Regionala Căi Ferate Brașov. Toate drepturile rezervate.</p>
+      <p>&copy; 2026 CAR Regională Căi Ferate Brașov</p>
     </div>
   </footer>
 
   <script>
+    // Duration buttons
+    document.querySelectorAll('.duration-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
     function calculateLoan() {
-      const amount = parseFloat(document.getElementById('loanAmount').value) || 0;
-      const months = parseInt(document.getElementById('loanMonths').value) || 0;
-      const rate = 0.08; // 8% annual
+      const amount = parseFloat(document.getElementById('loanAmount').value);
+      const months = parseInt(document.querySelector('.duration-btn.active').dataset.months);
+      const annualRate = 0.07; // 7% annual
       
-      if (amount > 0 && months > 0) {
-        const monthlyRate = rate / 12;
-        const payment = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
-        const total = payment * months;
-        
-        document.getElementById('calcResult').innerHTML = `
-          <h3>Estimare Rambursare</h3>
-          <p>Rata lunară: <strong>${payment.toFixed(2)} lei</strong></p>
-          <p>Total de plătit: <strong>${total.toFixed(2)} lei</strong></p>
-          <p class="calc-note">* Calcul estimativ. Consultați biroul CAR pentru oferta exactă.</p>
-        `;
+      if (!amount || amount < 1000) {
+        alert('Te rugăm să introduci o sumă validă (minim 1.000 lei)');
+        return;
       }
+      
+      const monthlyRate = annualRate / 12;
+      const payment = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+                      (Math.pow(1 + monthlyRate, months) - 1);
+      const totalPayment = payment * months;
+      const totalInterest = totalPayment - amount;
+      
+      document.getElementById('monthlyRate').textContent = payment.toFixed(0) + ' lei/lună';
+      document.getElementById('totalAmount').textContent = amount.toLocaleString('ro-RO') + ' lei';
+      document.getElementById('totalInterest').textContent = totalInterest.toFixed(0) + ' lei';
+      document.getElementById('totalPayment').textContent = totalPayment.toFixed(0) + ' lei';
+      
+      document.getElementById('resultBox').classList.add('show');
     }
   </script>
 </body>
