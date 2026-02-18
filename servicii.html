@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicii | CAR Regionala Căi Ferate Brașov</title>
+  <meta name="description" content="Servicii financiare CAR CFR Brașov - economii, împrumuturi, asistență medicală">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Salt la conținut</a>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo-section">
+        <div class="logo-icon"><i class="fas fa-train"></i></div>
+        <span class="logo-text">CAR Regionala Bv</span>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Acasă</a></li>
+          <li><a href="servicii.html" class="nav-link active">Servicii</a></li>
+          <li><a href="despre.html" class="nav-link">Despre</a></li>
+          <li><a href="membri.html" class="nav-link">Membri</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Meniu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Serviciile Noastre</h1>
+        <p class="page-hero-subtitle">Soluții financiare complete pentru membrii noștri</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="services-detailed">
+          
+          <div class="service-block">
+            <div class="service-icon-large"><i class="fas fa-piggy-bank"></i></div>
+            <div class="service-content">
+              <h2>Economii și Depozite</h2>
+              <p>Capitalizează-ți economiile cu dobânzi atractive. Oferim diverse tipuri de depozite adaptate nevoilor tale:</p>
+              <ul>
+                <li>Depozite la termen cu dobândă fixă</li>
+                <li>Conturi de economii cu lichiditate ridicată</li>
+                <li>Posibilitatea constituirii de depozite recurente</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-block">
+            <div class="service-icon-large"><i class="fas fa-hand-holding-usd"></i></div>
+            <div class="service-content">
+              <h2>Împrumuturi de Nevoi Personale</h2>
+              <p>Accesează fonduri rapid și ușor pentru diverse necesități:</p>
+              <ul>
+                <li>Avansuri în contul salariului</li>
+                <li>Împrumuturi pentru achiziții personale</li>
+                <li>Credit pentru studii și formare profesională</li>
+                <li>Împrumuturi pentru evenimente speciale (nunți, botezuri)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-block">
+            <div class="service-icon-large"><i class="fas fa-home"></i></div>
+            <div class="service-content">
+              <h2>Credit Imobiliar</h2>
+              <p>Realizează-ți visul de a avea o locuință proprie:</p>
+              <ul>
+                <li>Credit pentru achiziția unei locuințe</li>
+                <li>Credit pentru construcție sau renovare</li>
+                <li>Termeni flexibili de rambursare</li>
+                <li>Dobânzi competitive</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-block">
+            <div class="service-icon-large"><i class="fas fa-heartbeat"></i></div>
+            <div class="service-content">
+              <h2>Asistență Medicală</h2>
+              <p>Sănătatea ta și a familiei este prioritatea noastră:</p>
+              <ul>
+                <li>Sprijin financiar pentru intervenții chirurgicale</li>
+                <li>Reimbursare cheltuieli medicale</li>
+                <li>Asistență pentru tratamente speciale</li>
+                <li>Sprijin în caz de spitalizare</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Calculator de Împrumut</h2>
+        <div class="calculator">
+          <div class="calc-inputs">
+            <label>Suma dorită (lei):
+              <input type="number" id="loanAmount" placeholder="10000" min="1000" step="100">
+            </label>
+            <label>Durata (luni):
+              <input type="number" id="loanMonths" placeholder="12" min="3" max="60">
+            </label>
+            <button onclick="calculateLoan()" class="btn-calc">Calculează</button>
+          </div>
+          <div class="calc-result" id="calcResult">
+            <p>Completați câmpurile pentru a vedea estimarea.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Str. Toamnei nr. 16, Brașov</p>
+        <p><i class="fas fa-phone"></i> 0726 243 266</p>
+        <p><i class="fas fa-envelope"></i> info@car-cfr.ro</p>
+      </div>
+      <div class="footer-section">
+        <h4>Linkuri Rapide</h4>
+        <p><a href="https://uncaronline.ro/login">Acces Platformă</a></p>
+        <p><a href="https://www.uncar.ro">UNCAR Național</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CAR Regionala Căi Ferate Brașov. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateLoan() {
+      const amount = parseFloat(document.getElementById('loanAmount').value) || 0;
+      const months = parseInt(document.getElementById('loanMonths').value) || 0;
+      const rate = 0.08; // 8% annual
+      
+      if (amount > 0 && months > 0) {
+        const monthlyRate = rate / 12;
+        const payment = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+        const total = payment * months;
+        
+        document.getElementById('calcResult').innerHTML = `
+          <h3>Estimare Rambursare</h3>
+          <p>Rata lunară: <strong>${payment.toFixed(2)} lei</strong></p>
+          <p>Total de plătit: <strong>${total.toFixed(2)} lei</strong></p>
+          <p class="calc-note">* Calcul estimativ. Consultați biroul CAR pentru oferta exactă.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
