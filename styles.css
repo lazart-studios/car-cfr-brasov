@@ -112,17 +112,18 @@ body {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 2px;
+  height: 3px;
   background: var(--accent-gold);
   transition: var(--transition);
+  border-radius: 3px;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
-  width: 70%;
+  width: 40%;
 }
 
 .mobile-toggle {
