@@ -421,6 +421,11 @@
   </footer>
 
   <script>
+    // Mobile menu toggle
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+    
     // Duration buttons
     document.querySelectorAll('.duration-btn').forEach(btn => {
       btn.addEventListener('click', function() {
