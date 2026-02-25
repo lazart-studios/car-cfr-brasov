@@ -2007,3 +2007,127 @@ img, iframe {
     display: none;
   }
 }
+
+/* ===== CONTRAST FIXES ===== */
+
+/* Ensure all section titles are visible */
+.section-title {
+  color: var(--primary-burgundy) !important;
+  text-shadow: none !important;
+}
+
+.section-subtitle {
+  color: var(--text-medium) !important;
+  opacity: 1 !important;
+}
+
+/* White background sections - ensure dark text */
+.edu-section[style*="background: #ffffff"],
+.edu-section[style*="background: var(--warm-cream)"],
+.location-section {
+  background: #ffffff !important;
+}
+
+.edu-section[style*="background: #ffffff"] .section-title,
+.location-section .section-title {
+  color: var(--primary-burgundy) !important;
+  text-shadow: none !important;
+}
+
+.edu-section[style*="background: #ffffff"] .section-subtitle,
+.location-section .section-subtitle {
+  color: var(--text-medium) !important;
+}
+
+/* Edu cards text */
+.edu-card h3 {
+  color: var(--primary-burgundy) !important;
+}
+
+.edu-card p {
+  color: var(--text-medium) !important;
+}
+
+/* Info banner text */
+.info-banner h3 {
+  color: var(--accent-gold) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.info-banner p {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Comparison table */
+.comparison-table th {
+  background: var(--primary-burgundy) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.comparison-table td {
+  color: var(--text-medium) !important;
+}
+
+.comparison-table td:first-child {
+  color: var(--text-dark) !important;
+  font-weight: 600;
+}
+
+/* Location section */
+.location-note {
+  color: var(--primary-burgundy) !important;
+  background: var(--warm-cream);
+}
+
+.address-card h3 {
+  color: var(--primary-burgundy) !important;
+}
+
+.address-card p {
+  color: var(--text-medium) !important;
+}
+
+.location-hint {
+  color: var(--primary-burgundy) !important;
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.car-depot-note {
+  color: var(--primary-burgundy-dark) !important;
+  background: rgba(139, 30, 63, 0.1);
+}
+
+.map-link {
+  color: var(--primary-burgundy) !important;
+}
+
+/* Footer */
+.footer-section h4 {
+  color: var(--accent-gold) !important;
+}
+
+.footer-section p,
+.footer-section a {
+  color: var(--warm-tan) !important;
+}
+
+.footer-bottom {
+  color: var(--warm-tan) !important;
+}
+
+/* Cards scrollable */
+.card-scroll h3 {
+  color: var(--primary-burgundy) !important;
+}
+
+.card-scroll p {
+  color: var(--text-medium) !important;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  color: var(--text-medium) !important;
+}
