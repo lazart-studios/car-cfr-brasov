@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAR Regionala Căi Ferate Brașov - Split Design</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-variants.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="animated-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-section">
+        <img src="logo-car-cfr.png" alt="CAR CFR Brașov" class="logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Acasă</a></li>
+          <li><a href="servicii.html" class="nav-link">Servicii</a></li>
+          <li><a href="despre.html" class="nav-link">Despre</a></li>
+          <li><a href="membri.html" class="nav-link">Membri</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- SPLIT LAYOUT HERO -->
+  <section class="hero">
+    <div class="smoke-container">
+      <div class="smoke-layer smoke-1"></div>
+      <div class="smoke-layer smoke-2"></div>
+      <div class="smoke-layer smoke-3"></div>
+    </div>
+    
+    <div class="hero-split">
+      <div class="hero-split-content">
+        <span class="hero-slogan">Încredere de peste 125 de ani</span>
+        <h1 class="hero-title">CAR Regionala Căi Ferate Brașov</h1>
+        <p class="hero-slogan-secondary">Plasa de siguranță pentru cei cu nevoi simple — alături de tine și familia ta</p>
+        <div class="hero-buttons">
+          <a href="https://uncaronline.ro/login" class="hero-cta" target="_blank">
+            <i class="fas fa-user-circle"></i> Accesează Contul
+          </a>
+          <a href="membri.html" class="hero-cta hero-cta-secondary">
+            <i class="fas fa-user-plus"></i> Înregistrare
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-split-visual">
+        <div class="shape-composition">
+          <div class="shape-circle shape-circle-1"></div>
+          <div class="shape-circle shape-circle-2"></div>
+          <div class="shape-circle shape-circle-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- HORIZONTAL SCROLLABLE CARDS -->
+    <div class="container" style="padding: 3rem 0;">
+      <h2 class="section-title">Serviciile Noastre</h2>
+      <p class="section-subtitle">Swipe pentru a vedea toate serviciile</p>
+      
+      <div class="cards-scroll-container">
+        <div class="cards-scroll">
+          <div class="card-scroll">
+            <div class="card-scroll-icon"><i class="fas fa-piggy-bank"></i></div>
+            <h3>Economisire</h3>
+            <p>Capitalizarea economiilor cu dobândă atractivă pentru membri.</p>
+          </div>
+          
+          <div class="card-scroll">
+            <div class="card-scroll-icon"><i class="fas fa-percentage"></i></div>
+            <h3>Împrumut Fond Social</h3>
+            <p>DAE 9% - cel mai avantajos împrumut pentru membri.</p>
+          </div>
+          
+          <div class="card-scroll">
+            <div class="card-scroll-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <h3>Împrumut Tradițional</h3>
+            <p>DAE 10.8% - împrumut clasic cu condiții flexibile.</p>
+          </div>
+          
+          <div class="card-scroll">
+            <div class="card-scroll-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Constituire Fond</h3>
+            <p>DAE 15.6% - pentru sume mai mari și nevoi speciale.</p>
+          </div>
+        </div>
+      </div>
+      <p class="scroll-hint"><i class="fas fa-hand-pointer"></i> Glisează pentru mai multe</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 C.A.R. Regionala CFR Brașov. Design: Split Layout + Cards Scrollabile</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

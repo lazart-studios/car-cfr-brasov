@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAR Regionala Căi Ferate Brașov - Full Height</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-variants.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header absolut pentru full height hero -->
+  <header class="header" style="position: absolute; top: 0; left: 0; right: 0; z-index: 1000; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 100%);">
+    <div class="nav-container">
+      <a href="index.html" class="logo-section">
+        <img src="logo-car-cfr.png" alt="CAR CFR Brașov" class="logo-img">
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Acasă</a></li>
+          <li><a href="servicii.html" class="nav-link">Servicii</a></li>
+          <li><a href="despre.html" class="nav-link">Despre</a></li>
+          <li><a href="membri.html" class="nav-link">Membri</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- FULL HEIGHT HERO -->
+  <section class="hero hero-full">
+    <div class="smoke-container">
+      <div class="smoke-layer smoke-1"></div>
+      <div class="smoke-layer smoke-2"></div>
+      <div class="smoke-layer smoke-3"></div>
+      <div class="smoke-layer smoke-4"></div>
+      <div class="smoke-layer smoke-5"></div>
+    </div>
+    
+    <div class="particle-mist" id="particleMist"></div>
+    
+    <div class="hero-content">
+      <span class="hero-slogan">Încredere de peste 125 de ani</span>
+      <h1 class="hero-title">CAR Regionala<br>Căi Ferate Brașov</h1>
+      <p class="hero-slogan-secondary">Plasa de siguranță pentru cei cu nevoi simple<br>— alături de tine și familia ta</p>
+      <div class="hero-buttons">
+        <a href="https://uncaronline.ro/login" class="hero-cta" target="_blank">
+          <i class="fas fa-user-circle"></i> Accesează Contul
+        </a>
+        <a href="membri.html" class="hero-cta hero-cta-secondary">
+          <i class="fas fa-user-plus"></i> Înregistrare Cont Nou
+        </a>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator" onclick="document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container" style="padding-top: 4rem;">
+      <h2 class="section-title">Serviciile Noastre</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3 class="card-title">Economisire</h3>
+          <p class="card-text">Capitalizarea economiilor cu dobândă atractivă.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <h3 class="card-title">Împrumuturi și dobânzi</h3>
+          <p class="card-text">
+            <strong>La nivelul fondului social</strong> – DAE 9%<br>
+            <strong>Tradițional</strong> – DAE 10.8%<br>
+            <strong>Cu constituire de fond</strong> – DAE 15.6%
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 C.A.R. Regionala CFR Brașov. Design: Full Height Hero</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+    
+    // Mist particles
+    const mistContainer = document.getElementById('particleMist');
+    for (let i = 0; i < 15; i++) {
+      const mist = document.createElement('div');
+      mist.className = 'mist-particle';
+      mist.style.left = Math.random() * 100 + '%';
+      mist.style.animationDelay = Math.random() * 12 + 's';
+      mist.style.animationDuration = (10 + Math.random() * 8) + 's';
+      mistContainer.appendChild(mist);
+    }
+  </script>
+</body>
+</html>
