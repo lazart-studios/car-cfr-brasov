@@ -809,15 +809,36 @@ body {
 .logo-section {
   text-decoration: none;
   transition: var(--transition);
+  display: flex;
+  align-items: center;
 }
 
 .logo-section:hover {
   transform: scale(1.02);
 }
 
-.logo-section:hover .logo-icon {
-  background: var(--accent-gold-light);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+.logo-img {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: var(--transition);
+}
+
+.logo-section:hover .logo-img {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Mobile logo */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 36px;
+  }
 }
 
 /* Hero slogans (instead of badge) */
