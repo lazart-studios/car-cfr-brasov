@@ -415,9 +415,12 @@
       document.getElementById('navMenu').classList.toggle('active');
     });
 
-    // Create particles
+    // Create particles - fewer on mobile for performance
     const particlesContainer = document.getElementById('particles');
-    for (let i = 0; i < 30; i++) {
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 15 : 30;
+    
+    for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
       particle.style.left = Math.random() * 100 + '%';
