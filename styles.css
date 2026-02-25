@@ -283,6 +283,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+/* Main content area background */
+main {
+  background: #ffffff !important;
+  position: relative;
+  z-index: 5;
 }
 
 /* ===== Cards ===== */
@@ -1088,11 +1096,11 @@ a:focus, button:focus {
 
 /* ===== ANIMATED BACKGROUND - CSS Only ===== */
 .animated-bg {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
   background: linear-gradient(135deg, #0f1f35 0%, #1e3a5f 50%, #0f1f35 100%);
   overflow: hidden;
