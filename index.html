@@ -7,19 +7,22 @@
   <meta name="description" content="C.A.R. Regionala Căi Ferate Brașov - Casa de Ajutor Reciproc a salariaților din domeniul feroviar">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
 </head>
 <body>
+  <div id="vanta-background" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
   <a href="#main-content" class="skip-link">Salt la conținut</a>
 
   <!-- Header -->
   <header class="header">
     <div class="nav-container">
-      <div class="logo-section">
+      <a href="index.html" class="logo-section">
         <div class="logo-icon">
           <i class="fas fa-train"></i>
         </div>
-        <span class="logo-text">CAR Regională BRAȘOV</span>
-      </div>
+        <span class="logo-text">CAR</span>
+      </a>
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html" class="nav-link active">Acasă</a></li>
@@ -38,15 +41,20 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-badge">Încredere de peste 125 de ani</span>
+      <span class="hero-slogan">Încredere de peste 125 de ani</span>
       <h1 class="hero-title">CAR Regionala Căi Ferate Brașov</h1>
-      <p class="hero-subtitle">Plasa de siguranță pentru cei cu nevoi simple — alături de tine și familia ta</p>
-      <a href="https://uncaronline.ro/login" class="hero-cta" target="_blank" rel="noopener">
-        <i class="fas fa-user-circle"></i>
-        Accesează Contul Tău
-      </a>
+      <p class="hero-slogan-secondary">Plasa de siguranță pentru cei cu nevoi simple — alături de tine și familia ta</p>
+      <div class="hero-buttons">
+        <a href="https://uncaronline.ro/login" class="hero-cta" target="_blank" rel="noopener">
+          <i class="fas fa-user-circle"></i>
+          Accesează Contul Tău
+        </a>
+        <a href="membri.html" class="hero-cta hero-cta-secondary">
+          <i class="fas fa-user-plus"></i>
+          Înregistrare Cont Nou
+        </a>
+      </div>
     </div>
-    <div class="railway-pattern train-animation"></div>
   </section>
 
   <!-- Scrolling Banner -->
@@ -76,32 +84,20 @@
           <div class="card-icon">
             <i class="fas fa-piggy-bank"></i>
           </div>
-          <h3 class="card-title">Economii și Depozite</h3>
-          <p class="card-text">Capitalizarea și fructificarea economiilor membrilor prin depozite cu dobândă atractivă.</p>
+          <h3 class="card-title">Economisire</h3>
+          <p class="card-text">Capitalizarea și fructificarea economiilor membrilor prin soluții de economisire cu dobândă atractivă.</p>
         </div>
         
         <div class="card">
           <div class="card-icon">
             <i class="fas fa-hand-holding-usd"></i>
           </div>
-          <h3 class="card-title">Împrumuturi rapide</h3>
-          <p class="card-text">Avansuri în contul salariilor și împrumuturi pe termen scurt sau lung, cu condiții avantajoase.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-home"></i>
-          </div>
-          <h3 class="card-title">Credit pentru locuință</h3>
-          <p class="card-text">Împrumuturi pe termen lung pentru investiții imobiliare, casa sau ipoteci.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h3 class="card-title">Asistență medicală</h3>
-          <p class="card-text">Ajutoare în caz de boală, accidente sau infirmități, plus acces la servicii medicale.</p>
+          <h3 class="card-title">Împrumuturi și dobânzi</h3>
+          <p class="card-text">
+            <strong>La nivelul fondului social</strong> – DAE 9%<br>
+            <strong>Tradițional (clasic)</strong> – DAE 10.8%<br>
+            <strong>Cu constituire de fond</strong> – DAE 15.6%
+          </p>
         </div>
       </div>
 
@@ -167,6 +163,38 @@
     </div>
   </main>
 
+  <!-- Location Section -->
+  <section class="location-section">
+    <div class="container">
+      <h2 class="section-title">Ne Găsiți Aici</h2>
+      <p class="location-note"><i class="fas fa-info-circle"></i> Intrarea se face pe o alee pietonală, pe lângă o bisericuță</p>
+      <div class="location-content">
+        <div class="location-address">
+          <div class="address-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Adresă</h3>
+            <p>Str. Toamnei nr. 16, bl. 2D, sc. D, ap. 2<br>Brașov, 500223</p>
+            <p class="location-hint"><i class="fas fa-walking"></i> Alee pietonală, lângă bisericuță</p>
+            <p class="car-depot-note"><i class="fas fa-exclamation-triangle"></i> Atentie: Nu confundați cu "CAR Depoul CFR Brașov" din apropiere</p>
+          </div>
+        </div>
+        <div class="location-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.5!2d25.59!3d45.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM5JzAwLjAiTiAyNcKwMzUnMjQuMCJF!5e0!3m2!1sro!2sro!4v1"
+            width="100%" 
+            height="300" 
+            style="border:0; border-radius: 8px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <a href="https://maps.app.goo.gl/WGJ4KWvTZXE9Zh4W9" target="_blank" rel="noopener" class="map-link">
+            <i class="fas fa-external-link-alt"></i> Deschide în Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
@@ -179,6 +207,10 @@
         <p>
           <i class="fas fa-phone"></i> <a href="tel:0726243266">0726 243 266</a><br>
           <i class="fas fa-envelope"></i> <a href="mailto:info@car-cfr.ro">info@car-cfr.ro</a>
+        </p>
+        <p class="working-hours">
+          <i class="fas fa-clock"></i> <strong>Program:</strong><br>
+          Luni – Vineri: 8:45 – 14:00
         </p>
       </div>
       <div class="footer-section">
@@ -198,6 +230,18 @@
     // Mobile menu toggle
     document.getElementById('mobileToggle').addEventListener('click', function() {
       document.getElementById('navMenu').classList.toggle('active');
+    });
+
+    // Initialize VANTA FOG background
+    VANTA.FOG({
+      el: "#vanta-background",
+      highlightColor: 0x2c4a6e,
+      midtoneColor: 0x1e3a5f,
+      lowlightColor: 0x152a45,
+      baseColor: 0x0f1f35,
+      blurFactor: 0.8,
+      speed: 0.8,
+      zoom: 1.2
     });
   </script>
 </body>

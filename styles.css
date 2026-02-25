@@ -803,6 +803,195 @@ body {
   }
 }
 
+/* ===== New Styles for Modified Layout ===== */
+
+/* Logo as link */
+.logo-section {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.logo-section:hover {
+  transform: scale(1.02);
+}
+
+.logo-section:hover .logo-icon {
+  background: var(--accent-gold-light);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Hero slogans (instead of badge) */
+.hero-slogan {
+  display: block;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-slogan-secondary {
+  color: var(--warm-bg);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+/* Hero buttons container */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  border: 2px solid var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: none;
+}
+
+.hero-cta-secondary:hover {
+  background: var(--accent-gold);
+  color: var(--primary-burgundy-dark);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* VANTA Background - ensure content stays readable */
+#vanta-background {
+  opacity: 0.6;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(139, 30, 63, 0.85) 0%, 
+    rgba(107, 24, 50, 0.85) 50%,
+    rgba(74, 16, 32, 0.85) 100%);
+}
+
+/* Location Section */
+.location-section {
+  background: var(--white);
+  padding: 4rem 0;
+  margin: 3rem 0;
+}
+
+.location-note {
+  text-align: center;
+  color: var(--primary-burgundy);
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--warm-cream);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.location-address {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.address-card {
+  background: var(--warm-cream);
+  padding: 2rem;
+  border-radius: 20px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.address-card h3 {
+  color: var(--primary-burgundy);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.address-card p {
+  color: var(--text-medium);
+  margin-bottom: 0.5rem;
+}
+
+.location-hint {
+  color: var(--primary-burgundy);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+}
+
+.car-depot-note {
+  color: var(--primary-burgundy-dark);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(139, 30, 63, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(139, 30, 63, 0.2);
+}
+
+.location-map {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.location-map iframe {
+  box-shadow: var(--shadow-soft);
+}
+
+.map-link {
+  text-align: center;
+  color: var(--primary-burgundy);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.map-link:hover {
+  color: var(--accent-gold);
+}
+
+/* Working Hours in Footer */
+.working-hours {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.working-hours strong {
+  color: var(--accent-gold);
+}
+
+/* Responsive for Location Section */
+@media (max-width: 768px) {
+  .location-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-cta,
+  .hero-cta-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
 /* ===== Accessibility ===== */
 .skip-link {
   position: absolute;
