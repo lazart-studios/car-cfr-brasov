@@ -7,11 +7,15 @@
   <meta name="description" content="C.A.R. Regionala Căi Ferate Brașov - Casa de Ajutor Reciproc a salariaților din domeniul feroviar">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
 </head>
 <body>
-  <div id="vanta-background" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="particles" id="particles"></div>
+  </div>
   <a href="#main-content" class="skip-link">Salt la conținut</a>
 
   <!-- Header -->
@@ -163,6 +167,185 @@
     </div>
   </main>
 
+  <!-- Educational Section: Ce este o CAR -->
+  <section class="edu-section">
+    <div class="container">
+      <h2 class="section-title">Ce Este o Casă de Ajutor Reciproc?</h2>
+      <p class="section-subtitle">Tradiție, solidaritate și încredere de peste 125 de ani</p>
+      
+      <div class="info-banner">
+        <h3><i class="fas fa-hands-helping"></i> Principiul de Bază</h3>
+        <p>Casele de Ajutor Reciproc (CAR) sunt asociații non-profit care funcționează pe principiul solidarității între membri. Practic, ne ajutăm reciproc: punem economiile în comun și oferim împrumuturi celor care au nevoie.</p>
+      </div>
+      
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-users"></i></div>
+            <h3>Solidaritate</h3>
+          </div>
+          <p>Fiecare membru contribuie la fondul comun și poate beneficia de ajutor financiar atunci când are nevoie. Cu cât suntem mai mulți, cu atât putem ajuta mai mult.</p>
+        </div>
+        
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3>Transparență Totală</h3>
+          </div>
+          <p>Toate operațiunile sunt transparente și controlate. Fiecare membru știe exact cum sunt folosiți banii și poate participa la deciziile importante.</p>
+        </div>
+        
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Plasă de Siguranță</h3>
+          </div>
+          <p>CAR-ul este acolo când ai nevoie: pentru cheltuieli medicale neprevăzute, investiții în educație, reparații urgente sau orice altă necesitate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section: CAR vs Bancă -->
+  <section class="edu-section" style="background: var(--warm-cream);">
+    <div class="container">
+      <h2 class="section-title">CAR vs. Bancă Comercială</h2>
+      <p class="section-subtitle">De ce să alegi o Casă de Ajutor Reciproc?</p>
+      
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteriu</th>
+            <th>C.A.R.</th>
+            <th>Bancă Comercială</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Scop</td>
+            <td>Non-profit, ajută membrii</td>
+            <td>Profit pentru acționari</td>
+          </tr>
+          <tr>
+            <td>Dobândă la economii</td>
+            <td class="check">✓ Atractivă, avantajează membrul</td>
+            <td class="cross">✗ Mică, favoarează banca</td>
+          </tr>
+          <tr>
+            <td>Dobândă la împrumut</td>
+            <td class="check">✓ Redusă (9-15.6% DAE)</td>
+            <td class="cross">✗ Mare (15-25% DAE)</td>
+          </tr>
+          <tr>
+            <td>Comisioane</td>
+            <td class="check">✓ Minime sau zero</td>
+            <td class="cross">✗ Multiple și costisitoare</td>
+          </tr>
+          <tr>
+            <td>Flexibilitate</td>
+            <td class="check">✓ Înțelegere pentru situații dificile</td>
+            <td class="cross">✗ Strict contractuală</td>
+          </tr>
+          <tr>
+            <td>Decizii</td>
+            <td class="check">✓ Participă membrii la Adunarea Generală</td>
+            <td class="cross">✗ Decizii la nivel de management</td>
+          </tr>
+          <tr>
+            <td>Comunitate</td>
+            <td class="check">✓ Apartenență la un grup cu valori comune</td>
+            <td class="cross">✗ Relație client-furnizor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- UNCAR Affiliation Section -->
+  <section class="edu-section">
+    <div class="container">
+      <h2 class="section-title">Afilierea la UNCAR</h2>
+      <p class="section-subtitle">Uniunea Națională a Caselor de Ajutor Reciproc ale Salariaților</p>
+      
+      <div class="info-banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f1f35 100%);">
+        <h3><i class="fas fa-network-wired"></i> O Rețea Națională de Încredere</h3>
+        <p>CAR Regionala CFR Brașov este membră a UNCAR - o organizație care unește peste 200 de Case de Ajutor Reciproc din toată țara.</p>
+      </div>
+      
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-clipboard-check"></i></div>
+            <h3>Supraveghere și Control</h3>
+          </div>
+          <p>UNCAR asigură supravegherea permanentă a activității noastre, garantând respectarea tuturor standardelor legale și etice.</p>
+        </div>
+        
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>Training și Dezvoltare</h3>
+          </div>
+          <p>Beneficiem de programe de formare continuă pentru personal, asigurând servicii de calitate și la standarde înalte.</p>
+        </div>
+        
+        <div class="edu-card">
+          <div class="edu-card-header">
+            <div class="edu-icon"><i class="fas fa-handshake"></i></div>
+            <h3>Bune Practici</h3>
+          </div>
+          <p>Suntem parte dintr-o rețea care promovează transparența, solidaritatea și respectul reciproc între toate CAR-urile membre.</p>
+        </div>
+      </div>
+      
+      <div class="edu-card" style="margin-top: 2rem; border-left-color: var(--primary-burgundy);">
+        <h3 style="color: var(--primary-burgundy); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Ce înseamnă pentru tine?</h3>
+        <ul>
+          <li><strong>Siguranță:</strong> CAR-ul tău este monitorizat și verificat periodic de o organizație națională</li>
+          <li><strong>Garanții:</strong> Respectăm standardele UNCAR în toate operațiunile</li>
+          <li><strong>Suport:</strong> Ai acces la resurse și expertiză la nivel național</li>
+          <li><strong>Rețea:</strong> Posibilitatea de a interacționa cu alte CAR-uri din țară</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financial Education Section -->
+  <section class="edu-section" style="background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-burgundy-dark) 100%); color: white;">
+    <div class="container">
+      <h2 class="section-title" style="color: var(--accent-gold);">Ghid de Educație Financiară</h2>
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Sfaturi practice pentru o viață financiară sănătoasă</p>
+      
+      <div class="edu-grid" style="margin-top: 2rem;">
+        <div class="edu-card" style="background: rgba(255,255,255,0.1); color: white; border-left-color: var(--accent-gold);">
+          <div class="edu-card-header">
+            <div class="edu-icon" style="background: var(--accent-gold); color: var(--primary-burgundy-dark);"><i class="fas fa-piggy-bank"></i></div>
+            <h3 style="color: white;">Regula 50/30/20</h3>
+          </div>
+          <p style="color: rgba(255,255,255,0.9);"><strong>50%</strong> pentru nevoi (chirie, utilități, mâncare)<br>
+          <strong>30%</strong> pentru dorințe (ieșiri, hobby-uri)<br>
+          <strong>20%</strong> pentru economii și datorii</p>
+        </div>
+        
+        <div class="edu-card" style="background: rgba(255,255,255,0.1); color: white; border-left-color: var(--accent-gold);">
+          <div class="edu-card-header">
+            <div class="edu-icon" style="background: var(--accent-gold); color: var(--primary-burgundy-dark);"><i class="fas fa-umbrella"></i></div>
+            <h3 style="color: white;">Fond de Urgență</h3>
+          </div>
+          <p style="color: rgba(255,255,255,0.9);">Ideal ar fi să ai economii pentru <strong>3-6 luni</strong> de cheltuieli. Începe cu sume mici, constante - chiar și 50 lei/lună contează!</p>
+        </div>
+        
+        <div class="edu-card" style="background: rgba(255,255,255,0.1); color: white; border-left-color: var(--accent-gold);">
+          <div class="edu-card-header">
+            <div class="edu-icon" style="background: var(--accent-gold); color: var(--primary-burgundy-dark);"><i class="fas fa-chart-line"></i></div>
+            <h3 style="color: white;">Diferența între DAE și Dobândă Nominală</h3>
+          </div>
+          <p style="color: rgba(255,255,255,0.9);"><strong>DAE (Dobânda Anuală Efectivă)</strong> include toate costurile: dobândă, comisioane, taxe. E cea mai bună metodă de comparat ofertele!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Location Section -->
   <section class="location-section">
     <div class="container">
@@ -232,17 +415,16 @@
       document.getElementById('navMenu').classList.toggle('active');
     });
 
-    // Initialize VANTA FOG background
-    VANTA.FOG({
-      el: "#vanta-background",
-      highlightColor: 0x2c4a6e,
-      midtoneColor: 0x1e3a5f,
-      lowlightColor: 0x152a45,
-      baseColor: 0x0f1f35,
-      blurFactor: 0.8,
-      speed: 0.8,
-      zoom: 1.2
-    });
+    // Create particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 15 + 's';
+      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+      particlesContainer.appendChild(particle);
+    }
   </script>
 </body>
 </html>
