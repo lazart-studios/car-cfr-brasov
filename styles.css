@@ -137,10 +137,7 @@ body {
 
 /* ===== Hero Section ===== */
 .hero {
-  background: linear-gradient(135deg, 
-    rgba(60, 15, 30, 0.95) 0%, 
-    rgba(45, 12, 22, 0.95) 50%,
-    rgba(35, 10, 18, 0.95) 100%);
+  background: transparent;
   padding: 5rem 1rem 7rem;
   text-align: center;
   position: relative;
@@ -154,13 +151,13 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
   animation: pulse 8s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1.2); opacity: 0.8; }
+  0%, 100% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.5; }
 }
 
 .hero-content {
@@ -1102,7 +1099,7 @@ a:focus, button:focus {
   width: 100%;
   height: 100vh;
   z-index: -1;
-  background: linear-gradient(135deg, #0f1f35 0%, #1e3a5f 50%, #0f1f35 100%);
+  background: linear-gradient(135deg, #F5E6D3 0%, #FAF3EB 50%, #E8D5C4 100%);
   overflow: hidden;
 }
 
@@ -1110,14 +1107,14 @@ a:focus, button:focus {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.5;
+  opacity: 0.4;
   animation: float 20s ease-in-out infinite;
 }
 
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(139, 30, 63, 0.6) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 30, 63, 0.2) 0%, transparent 70%);
   top: -200px;
   left: -200px;
   animation-delay: 0s;
@@ -1126,7 +1123,7 @@ a:focus, button:focus {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
   bottom: -150px;
   right: -150px;
   animation-delay: -7s;
@@ -1135,7 +1132,7 @@ a:focus, button:focus {
 .orb-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(139, 30, 63, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(168, 43, 82, 0.15) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   animation-delay: -14s;
@@ -1168,7 +1165,7 @@ a:focus, button:focus {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(212, 175, 55, 0.6);
+  background: rgba(139, 30, 63, 0.25);
   border-radius: 50%;
   animation: particle-rise 15s linear infinite;
   bottom: -10px;
@@ -2138,4 +2135,104 @@ img, iframe {
 /* Scroll hint */
 .scroll-hint {
   color: var(--text-medium) !important;
+}
+
+/* ===== RAILWAY SEPARATOR ===== */
+.railway-separator {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(180deg, transparent 0%, #ffffff 50%, #ffffff 100%);
+  overflow: hidden;
+  z-index: 5;
+}
+
+.track-bed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 100%);
+  border-top: 3px solid #a0a0a0;
+}
+
+.track-line {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #8B1E3F 0px,
+    #8B1E3F 30px,
+    transparent 30px,
+    transparent 40px
+  );
+  animation: trackMove 2s linear infinite;
+}
+
+@keyframes trackMove {
+  0% { background-position: 0 0; }
+  100% { background-position: -70px 0; }
+}
+
+.train-dot {
+  position: absolute;
+  bottom: 22px;
+  left: -30px;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #D4AF37 0%, #B8962E 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.4);
+  animation: trainMove 6s linear infinite;
+  z-index: 2;
+}
+
+@keyframes trainMove {
+  0% {
+    left: -30px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% + 30px);
+    opacity: 0;
+  }
+}
+
+/* Mobile railway separator */
+@media (max-width: 768px) {
+  .railway-separator {
+    height: 50px;
+  }
+  
+  .track-line {
+    height: 4px;
+    bottom: 20px;
+    background: repeating-linear-gradient(
+      90deg,
+      #8B1E3F 0px,
+      #8B1E3F 20px,
+      transparent 20px,
+      transparent 28px
+    );
+  }
+  
+  .train-dot {
+    width: 10px;
+    height: 10px;
+    bottom: 17px;
+  }
+  
+  .track-bed {
+    height: 16px;
+  }
 }
