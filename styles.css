@@ -36,17 +36,23 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--warm-tan) 50%, var(--warm-cream) 100%);
+  background: linear-gradient(135deg, #1a0810 0%, #0e040a 50%, #160c10 100%);
   background-attachment: fixed;
   color: var(--text-dark);
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
 }
 
 /* ===== Header & Navigation ===== */
 .header {
-  background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-burgundy-dark) 100%);
-  box-shadow: var(--shadow-medium);
+  background: linear-gradient(135deg,
+    rgba(139, 30, 63, 0.82) 0%,
+    rgba(107, 24, 50, 0.82) 100%);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -280,12 +286,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  background: #ffffff;
+  background: transparent;
 }
 
 /* Main content area background */
 main {
-  background: #ffffff !important;
+  background: transparent !important;
   position: relative;
   z-index: 5;
 }
@@ -2235,4 +2241,241 @@ img, iframe {
   .track-bed {
     height: 16px;
   }
+}
+
+/* ================================================================
+   SMOKE EFFECT & GLASS DESIGN IMPROVEMENTS
+   ================================================================ */
+
+/* Smoke canvas – injected by smoke.js, ensured to sit at bottom */
+#smokeCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All page sections float above the smoke canvas */
+.header        { z-index: 1000; }
+.hero          { z-index: 5;    }
+main           { z-index: 5;    }
+.footer        { z-index: 5; position: relative; }
+.railway-separator { z-index: 5; position: relative; }
+
+/* ---- Glassmorphism content blocks ---- */
+/* White section wrappers become frosted glass */
+main > div[style*="background: #ffffff"],
+main > section[style*="background: #ffffff"],
+main > div[style*="background:#ffffff"],
+.location-section,
+.edu-section {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18),
+              inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Cream/tan sections */
+main > section[style*="background: var(--warm-cream)"],
+main > div[style*="background: var(--warm-cream)"] {
+  background: rgba(250, 243, 235, 0.93) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-radius: 24px;
+}
+
+/* Cards – lifted glass look */
+.card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1),
+              box-shadow 0.3s cubic-bezier(.4,0,.2,1),
+              background 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.99);
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(139, 30, 63, 0.18),
+              0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Edu cards – subtle glass */
+.edu-card {
+  background: rgba(250, 243, 235, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.edu-card:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow: 0 16px 40px rgba(139, 30, 63, 0.16);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Auth cards on membri.html */
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Contact card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Features section */
+.features-section {
+  background: rgba(250, 243, 235, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* About content box */
+.about-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Address card */
+.address-card {
+  background: rgba(250, 243, 235, 0.93);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---- Hero: let smoke breathe through ---- */
+.hero {
+  background: linear-gradient(135deg,
+    rgba(45, 11, 26, 0.88) 0%,
+    rgba(30,  8, 18, 0.88) 50%,
+    rgba(22,  6, 14, 0.88) 100%) !important;
+}
+
+/* ---- Footer glass ---- */
+.footer {
+  background: linear-gradient(135deg,
+    rgba(45, 11, 26, 0.92) 0%,
+    rgba(15,  4, 10, 0.95) 100%) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* ---- Navigation mobile overlay ---- */
+@media (max-width: 768px) {
+  .nav-menu {
+    background: rgba(107, 24, 50, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+/* ---- Scroll cards ---- */
+.card-scroll {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-scroll:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(139, 30, 63, 0.2);
+}
+
+/* ---- Buttons pulse on hover ---- */
+.hero-cta,
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::before,
+.btn-primary::before,
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-110%) skewX(-15deg);
+  transition: transform 0.4s ease;
+  border-radius: inherit;
+}
+
+.hero-cta:hover::before,
+.btn-primary:hover::before,
+.btn-secondary:hover::before {
+  transform: translateX(110%) skewX(-15deg);
+}
+
+/* ---- Comparison table glass ---- */
+.comparison-table tr:nth-child(even) {
+  background: rgba(250, 243, 235, 0.9);
+}
+
+.comparison-table tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* ---- Members hero section ---- */
+.members-hero {
+  background: linear-gradient(135deg,
+    rgba(139, 30,  63, 0.90) 0%,
+    rgba(107, 24,  50, 0.90) 100%) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- About / Contact heroes ---- */
+.about-hero,
+.contact-hero {
+  background: linear-gradient(135deg,
+    rgba(139, 30, 63, 0.90) 0%,
+    rgba(107, 24, 50, 0.90) 100%) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- Section that uses inline white bg on members/contact ---- */
+.container {
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- Info banner glass ---- */
+.info-banner {
+  background: linear-gradient(135deg,
+    rgba(139, 30, 63, 0.90) 0%,
+    rgba(107, 24, 50, 0.90) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---- Scroll-cards section wrapper ---- */
+.cards-scroll-container + * ,
+div[style*="background: #ffffff"] {
+  position: relative;
+  z-index: 5;
+}
+
+/* ---- Ensure animated-bg is hidden (smoke.js handles it) ---- */
+.animated-bg {
+  display: none;
 }

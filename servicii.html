@@ -9,10 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     .services-hero {
-      background: linear-gradient(135deg, var(--primary-burgundy) 0%, #6B1832 50%, var(--primary-burgundy-dark) 100%);
+      background: linear-gradient(135deg,
+        rgba(139, 30, 63, 0.88) 0%,
+        rgba(107, 24, 50, 0.88) 50%,
+        rgba(80,  18, 38, 0.88) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       padding: 6rem 0 4rem;
       position: relative;
       overflow: hidden;
+      z-index: 5;
     }
     
     .services-hero::before {
@@ -40,7 +46,10 @@
     }
     
     .service-card {
-      background: linear-gradient(145deg, #ffffff 0%, #f8f4f0 100%);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.12);
       border-radius: 24px;
       padding: 2.5rem;
       box-shadow: 0 10px 40px rgba(139, 30, 63, 0.1);
@@ -114,15 +123,19 @@
     }
     
     .calculator-section {
-      background: linear-gradient(135deg, #f8f4f0 0%, #fff 100%);
+      background: rgba(248, 244, 240, 0.5);
       padding: 4rem 0;
       position: relative;
+      z-index: 5;
     }
-    
+
     .calculator-container {
       max-width: 600px;
       margin: 0 auto;
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.1);
       border-radius: 30px;
       padding: 3rem;
       box-shadow: 0 20px 60px rgba(139, 30, 63, 0.1);
@@ -454,9 +467,10 @@
       document.getElementById('totalAmount').textContent = amount.toLocaleString('ro-RO') + ' lei';
       document.getElementById('totalInterest').textContent = totalInterest.toFixed(0) + ' lei';
       document.getElementById('totalPayment').textContent = totalPayment.toFixed(0) + ' lei';
-      
+
       document.getElementById('resultBox').classList.add('show');
     }
   </script>
+  <script src="smoke.js"></script>
 </body>
 </html>
