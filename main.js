@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroCanvas();
   initCalculator();
   initTableHovers();
+  initAccordion();
 });
 
 /* ==============================
@@ -382,6 +383,17 @@ function initCalculator() {
   if (!amountInput || !resultBox) return;
 
   let selectedMonths = 24;
+  let selectedRate   = 0.09; // default: fond social DAE 9%
+
+  /* ---- loan type buttons ---- */
+  document.querySelectorAll('.loan-type-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.loan-type-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      selectedRate = parseFloat(this.dataset.rate);
+      updateDisplay();
+    });
+  });
 
   /* ---- slider <-> input sync ---- */
   if (amountSlider) {
@@ -404,9 +416,9 @@ function initCalculator() {
   }
 
   /* ---- duration buttons ---- */
-  document.querySelectorAll('.duration-btn').forEach(btn => {
+  document.querySelectorAll('.duration-btn:not(.loan-type-btn)').forEach(btn => {
     btn.addEventListener('click', function () {
-      document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.duration-btn:not(.loan-type-btn)').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
       selectedMonths = parseInt(this.dataset.months, 10);
       updateDisplay();
@@ -421,20 +433,19 @@ function initCalculator() {
       return;
     }
 
-    const annualRate   = 0.07;
-    const monthlyRate  = annualRate / 12;
-    const n            = selectedMonths;
-    const payment      = (amount * monthlyRate * Math.pow(1 + monthlyRate, n))
-                       / (Math.pow(1 + monthlyRate, n) - 1);
-    const totalPayment = payment * n;
+    const monthlyRate   = selectedRate / 12;
+    const n             = selectedMonths;
+    const payment       = (amount * monthlyRate * Math.pow(1 + monthlyRate, n))
+                        / (Math.pow(1 + monthlyRate, n) - 1);
+    const totalPayment  = payment * n;
     const totalInterest = totalPayment - amount;
 
     const fmt = v => v.toLocaleString('ro-RO', { maximumFractionDigits: 0 });
 
-    document.getElementById('monthlyRate').textContent     = fmt(payment) + ' lei/lună';
-    document.getElementById('totalAmount').textContent     = fmt(amount) + ' lei';
-    document.getElementById('totalInterest').textContent   = fmt(totalInterest) + ' lei';
-    document.getElementById('totalPayment').textContent    = fmt(totalPayment) + ' lei';
+    document.getElementById('monthlyRate').textContent   = fmt(payment) + ' lei/lună';
+    document.getElementById('totalAmount').textContent   = fmt(amount) + ' lei';
+    document.getElementById('totalInterest').textContent = fmt(totalInterest) + ' lei';
+    document.getElementById('totalPayment').textContent  = fmt(totalPayment) + ' lei';
 
     resultBox.classList.add('visible');
   }
@@ -454,6 +465,39 @@ function syncSliderFill(slider) {
 
 function clamp(val, min, max) {
   return Math.min(Math.max(val, min), max);
+}
+
+/* ==============================
+   Accordion (Ghid Financiar)
+   ============================== */
+function initAccordion() {
+  const triggers = document.querySelectorAll('.accordion-trigger');
+  if (!triggers.length) return;
+
+  triggers.forEach(trigger => {
+    const panel = trigger.nextElementSibling;
+
+    // Set initial max-height for open items
+    if (trigger.getAttribute('aria-expanded') === 'true') {
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      triggers.forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.nextElementSibling.style.maxHeight = '0';
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
 }
 
 /* ==============================

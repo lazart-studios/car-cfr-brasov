@@ -1026,6 +1026,57 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
+.services-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Loan types inside service card */
+.loan-types {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0.5rem;
+}
+.loan-type-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.loan-type-item:last-child { border-bottom: none; padding-bottom: 0; }
+.loan-type-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+.loan-type-name {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.loan-type-dae {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.loan-type-dae strong {
+  color: var(--gold);
+  font-size: 1rem;
+}
+.loan-type-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Calculator loan type buttons */
+.loan-type-grid { grid-template-columns: repeat(3, 1fr); }
+.loan-type-btn { line-height: 1.3; padding: 0.75rem 0.5rem; font-size: 0.82rem; }
+.loan-type-btn small { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-muted); display: block; margin-top: 0.15rem; }
+.loan-type-btn.active small { color: var(--gold); }
 
 .service-card {
   background: var(--bg-card);
@@ -1655,6 +1706,179 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==============================
+   Accordion (Ghid Financiar)
+   ============================== */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border);
+}
+.accordion-item:last-child { border-bottom: none; }
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+  color: var(--text-primary);
+}
+.accordion-trigger:hover { background: var(--bg-card-hover); }
+.accordion-trigger[aria-expanded="true"] { background: rgba(212,175,55,0.04); }
+
+.accordion-icon {
+  width: 40px; height: 40px;
+  min-width: 40px;
+  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  color: var(--gold);
+  box-shadow: 0 4px 12px rgba(139,30,63,0.35);
+}
+
+.accordion-title {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.accordion-chevron {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: transform 0.3s var(--ease-out);
+}
+.accordion-trigger[aria-expanded="true"] .accordion-chevron { transform: rotate(180deg); }
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+}
+.accordion-panel[style*="max-height: none"] { overflow: visible; }
+
+.accordion-content {
+  padding: 0 2rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.accordion-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.accordion-content p:last-child { margin-bottom: 0; }
+.accordion-content strong { color: var(--text-primary); }
+
+.guide-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(212,175,55,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.guide-highlight i { color: var(--gold); margin-top: 0.15rem; flex-shrink: 0; }
+
+.guide-list {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.guide-list li {
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  padding-left: 0.25rem;
+}
+.guide-list li strong { color: var(--text-primary); }
+
+.guide-check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.guide-check-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.guide-check-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.guide-check-list li::before {
+  content: '';
+  display: block;
+  width: 18px; height: 18px;
+  min-width: 18px;
+  margin-top: 0.15rem;
+  background: rgba(91,219,138,0.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%235BDB8A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;
+  border-radius: 50%;
+}
+
+.guide-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.guide-compare-col {
+  border-radius: 14px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+}
+.guide-compare-col--car { background: rgba(91,219,138,0.05); border-color: rgba(91,219,138,0.15); }
+.guide-compare-col--bank { background: rgba(212,175,55,0.04); border-color: rgba(255,255,255,0.07); }
+.guide-compare-header {
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
+}
+.guide-compare-col--car .guide-compare-header { color: #5BDB8A; }
+.guide-compare-col--bank .guide-compare-header { color: var(--gold-muted); }
+.guide-compare-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.guide-compare-col ul li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(255,255,255,0.07);
+}
+.guide-compare-col--car ul li { border-color: rgba(91,219,138,0.2); }
+
+/* ==============================
    Responsive
    ============================== */
 @media (max-width: 1024px) {
@@ -1711,6 +1935,11 @@ img { max-width: 100%; display: block; }
   .comparison-table { font-size: 0.85rem; }
   .comparison-table thead th,
   .comparison-table tbody td { padding: 0.875rem 1rem; }
+  .guide-compare-grid { grid-template-columns: 1fr; }
+  .services-grid--two { grid-template-columns: 1fr; }
+  .loan-type-grid { grid-template-columns: 1fr; }
+  .accordion-trigger { padding: 1.1rem 1.25rem; gap: 0.75rem; }
+  .accordion-content { padding: 0 1.25rem 1.5rem; }
 }
 
 @media (max-width: 480px) {
