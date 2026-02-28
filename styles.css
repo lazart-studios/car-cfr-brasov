@@ -943,8 +943,10 @@ main {
 /* Location Section */
 .location-section {
   background: var(--white);
-  padding: 4rem 0;
-  margin: 3rem 0;
+  border-radius: 30px;
+  padding: 4rem 2rem;
+  margin: 3rem 20px;
+  box-shadow: var(--shadow-soft);
 }
 
 .location-note {
@@ -1205,7 +1207,7 @@ a:focus, button:focus {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 30px;
   padding: 3rem 2rem;
-  margin: 3rem 0;
+  margin: 3rem 20px;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
 }
@@ -1367,7 +1369,7 @@ a:focus, button:focus {
 @media (max-width: 768px) {
   .edu-section {
     padding: 2rem 1rem;
-    margin: 1.5rem 0;
+    margin: 1.5rem 12px;
     border-radius: 20px;
   }
   
@@ -1431,7 +1433,7 @@ a:focus, button:focus {
 @media (max-width: 480px) {
   .edu-section {
     padding: 1.5rem 0.75rem;
-    margin: 1rem 0;
+    margin: 1rem 10px;
     border-radius: 15px;
   }
   
@@ -1473,8 +1475,9 @@ a:focus, button:focus {
 /* Location Section Mobile */
 @media (max-width: 768px) {
   .location-section {
-    padding: 2rem 0;
-    margin: 1.5rem 0;
+    padding: 2rem 1rem;
+    margin: 1.5rem 12px;
+    border-radius: 20px;
   }
   
   .location-content {
@@ -1873,7 +1876,7 @@ img, iframe {
   pointer-events: none;
   z-index: 1;
   overflow: hidden;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 /* Multiple smoke layers */
@@ -1885,8 +1888,8 @@ img, iframe {
   left: -50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(212, 175, 55, 0.08) 0%,
-    rgba(168, 43, 82, 0.05) 30%,
+    rgba(212, 175, 55, 0.18) 0%,
+    rgba(168, 43, 82, 0.12) 30%,
     transparent 70%
   );
   filter: blur(40px);
@@ -1904,8 +1907,8 @@ img, iframe {
   animation-duration: 30s;
   background: radial-gradient(
     ellipse at 30% 70%,
-    rgba(139, 30, 63, 0.1) 0%,
-    rgba(212, 175, 55, 0.04) 40%,
+    rgba(139, 30, 63, 0.22) 0%,
+    rgba(212, 175, 55, 0.10) 40%,
     transparent 70%
   );
   transform: rotate(45deg);
@@ -1916,8 +1919,8 @@ img, iframe {
   animation-duration: 28s;
   background: radial-gradient(
     ellipse at 70% 30%,
-    rgba(212, 175, 55, 0.06) 0%,
-    rgba(139, 30, 63, 0.08) 50%,
+    rgba(212, 175, 55, 0.14) 0%,
+    rgba(139, 30, 63, 0.18) 50%,
     transparent 70%
   );
   transform: rotate(-30deg);

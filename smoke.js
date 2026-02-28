@@ -67,19 +67,19 @@
 
       _birth() {
         if (this.fromMouse) {
-          this.x          = mouse.x + (Math.random() - 0.5) * 30;
-          this.y          = mouse.y + (Math.random() - 0.5) * 30;
-          this.r          = Math.random() * 25 + 8;
-          this.maxR       = this.r   + Math.random() * 55 + 25;
-          this.baseAlpha  = Math.random() * 0.12 + 0.05;
-          this.maxLife    = Math.random() * 70  + 50;
+          this.x          = mouse.x + (Math.random() - 0.5) * 40;
+          this.y          = mouse.y + (Math.random() - 0.5) * 40;
+          this.r          = Math.random() * 35 + 12;
+          this.maxR       = this.r   + Math.random() * 80 + 40;
+          this.baseAlpha  = Math.random() * 0.20 + 0.10;
+          this.maxLife    = Math.random() * 80  + 60;
         } else {
           // Spawn below the hero, drift upward
           this.x          = Math.random() * W;
           this.y          = H + Math.random() * 60 + 20;
-          this.r          = Math.random() * 90 + 40;
-          this.maxR       = this.r   + Math.random() * 100 + 60;
-          this.baseAlpha  = Math.random() * 0.07 + 0.015;
+          this.r          = Math.random() * 120 + 55;
+          this.maxR       = this.r   + Math.random() * 140 + 80;
+          this.baseAlpha  = Math.random() * 0.14 + 0.04;
           this.maxLife    = Math.random() * 350 + 180;
         }
 
@@ -132,7 +132,7 @@
     }
 
     /* ---------- Particle pools ---------- */
-    const BG_COUNT = 40;
+    const BG_COUNT = 65;
     const bgPool   = [];
 
     for (let i = 0; i < BG_COUNT; i++) {
