@@ -210,8 +210,8 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 20px rgba(212,175,55,0.25);
 }
 .nav-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(212,175,55,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212,175,55,0.42);
   background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
 }
 
@@ -752,7 +752,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .address-card {
@@ -830,10 +830,16 @@ img { max-width: 100%; display: block; }
   border-radius: 22px;
   overflow: hidden;
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 .map-container iframe {
   display: block;
   filter: brightness(0.88) contrast(1.05) saturate(0.75);
+  flex: 1;
+  min-height: 320px;
+  height: auto;
+  width: 100%;
 }
 .map-link {
   display: flex;
@@ -1879,6 +1885,12 @@ img { max-width: 100%; display: block; }
 }
 .guide-compare-col--car ul li { border-color: rgba(91,219,138,0.2); }
 
+
+/* Single card auth grid */
+.auth-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+}
 /* ==============================
    Responsive
    ============================== */
