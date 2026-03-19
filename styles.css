@@ -1487,26 +1487,26 @@ img { max-width: 100%; display: block; }
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: 1.5rem 0;
+  border-radius: 16px;
+  border: 1px solid var(--border);
 }
 .table-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 4px;
 }
 .table-scroll::-webkit-scrollbar-track {
-  background: rgba(27,61,125,0.1);
-  border-radius: 3px;
+  background: transparent;
 }
 .table-scroll::-webkit-scrollbar-thumb {
-  background: rgba(27,61,125,0.3);
-  border-radius: 3px;
+  background: rgba(27,61,125,0.25);
+  border-radius: 2px;
 }
 .history-table {
   width: 100%;
   min-width: 420px;
   border-collapse: collapse;
   margin: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+  border: none;
+  border-radius: 0;
 }
 .history-table thead th {
   padding: 0.875rem 1.25rem;
