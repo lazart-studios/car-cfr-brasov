@@ -1483,10 +1483,27 @@ img { max-width: 100%; display: block; }
   padding-top: 0.1rem;
 }
 
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+.table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.table-scroll::-webkit-scrollbar-track {
+  background: rgba(27,61,125,0.1);
+  border-radius: 3px;
+}
+.table-scroll::-webkit-scrollbar-thumb {
+  background: rgba(27,61,125,0.3);
+  border-radius: 3px;
+}
 .history-table {
   width: 100%;
+  min-width: 420px;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
