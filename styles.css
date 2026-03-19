@@ -160,11 +160,15 @@ img { max-width: 100%; display: block; }
   filter: brightness(1.2) drop-shadow(0 0 14px rgba(212,175,55,0.35));
 }
 
-.nav-menu {
+.nav-links-desktop {
   display: flex;
   align-items: center;
   gap: 0.125rem;
   list-style: none;
+}
+
+.nav-menu {
+  display: none;
 }
 
 .nav-link {
@@ -1908,9 +1912,7 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .header, .nav-container, nav {
-    overflow: visible !important;
-  }
+  .nav-desktop { display: none; }
   .nav-menu {
     display: flex;
     position: fixed;
