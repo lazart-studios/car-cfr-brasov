@@ -1925,6 +1925,7 @@ img { max-width: 100%; display: block; }
     visibility: hidden;
     pointer-events: none;
     transition: transform 0.35s var(--ease-out), visibility 0.35s;
+    overflow-y: auto;
   }
   .nav-menu.active {
     transform: translateX(0);
