@@ -1465,7 +1465,8 @@ img { max-width: 100%; display: block; }
 }
 .history-list li {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   align-items: flex-start;
   color: var(--text-secondary);
   font-size: 0.95rem;
